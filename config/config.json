@@ -1,10 +1,16 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "sanlokaja123",
-    "database": "instagram_db",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "username": "yextezxznuhzsn",
+    "password": "479090947ab7de7432fea970912d4a8438e80d8e322689a34214563176ab17d1",
+    "database": "dcd8ci2nsqbvl4",
+    "host": "ec2-3-211-221-185.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   },
   "test": {
     "username": "postgres",
@@ -18,6 +24,12 @@
     "password": "479090947ab7de7432fea970912d4a8438e80d8e322689a34214563176ab17d1",
     "database": "dcd8ci2nsqbvl4",
     "host": "ec2-3-211-221-185.compute-1.amazonaws.com",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
