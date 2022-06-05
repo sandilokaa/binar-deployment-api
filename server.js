@@ -42,6 +42,6 @@ app.put("/post/update/:id", middlewares.authenticate, upload.single("picture"), 
 app.get("/user/:id/post", usersController.getPostByUserId)
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log(`Server listen on http://localhost:${PORT}`);
 });
