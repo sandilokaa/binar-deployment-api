@@ -1,11 +1,7 @@
 const jwt = require("jsonwebtoken");
-const {
-    JWT
-} = require("../lib/conts");
+const { JWT } = require("../lib/conts");
 const usersRepository = require("../repositories/usersRepository");
-const {
-    ROLES
-} = require("../lib/conts");
+const { ROLES } = require("../lib/conts");
 
 const authenticate = async (req, res, next) => {
     const authHeader = req.get("Authorization");
@@ -22,13 +18,9 @@ const authenticate = async (req, res, next) => {
         });
 
     try {
-        const {
-            email
-        } = jwt.verify(token, JWT.SECRET);
+        const { email } = jwt.verify(token, JWT.SECRET);
 
-        const getUser = await usersRepository.getByEmail({
-            email
-        });
+        const getUser = await usersRepository.getByEmail({ email });
 
         req.user = getUser;
 

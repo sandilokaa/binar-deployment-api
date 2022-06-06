@@ -188,14 +188,11 @@ class AuthService {
         try {
 
             // Get Google user credential
-            const client = new OAuth2Client(
-                "878652378412-rmjjckepnmtfqmn6b099tf95vsvmhuoh.apps.googleusercontent.com"
-            );
+            const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
             const userInfo = await client.verifyIdToken({
                 idToken: googleCredential,
-                audience:
-                    "878652378412-rmjjckepnmtfqmn6b099tf95vsvmhuoh.apps.googleusercontent.com",
+                audience:process.env.GOOGLE_CLIENT_ID,
             });
 
             const { email, name } = userInfo.payload;
