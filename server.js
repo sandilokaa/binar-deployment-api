@@ -46,7 +46,13 @@ app.put("/post/update/:id", middlewares.authenticate, upload.single("picture"), 
 
 app.get("/user/:id/post", usersController.getPostByUserId)
 
+// Testing CI/CD Route
+app.get("/testing-ci-cd/:id", usersController.getPostsByID);
 
-app.listen(process.env.PORT || PORT, () => {
-    console.log(`Server listen on http://localhost:${PORT}`);
+app.listen(process.env.PORT || 2000, () => {
+    console.log(
+        `Server berhasil berjalan di port http://localhost:${
+        process.env.PORT || 2000
+        }`
+    );
 });
