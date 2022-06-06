@@ -9,12 +9,7 @@ const PORT = 2000;
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(
-    cors({
-    origin:"https://binarsandi-instagram-web.herokuapp.com/", //Client Server
-    methods: "GET, POST, PUT, DELETE", 
-    credentials:true
-}))
+app.use(cors());
 
 // Public File Access
 app.use("/public/files", express.static(path.join(__dirname, "/storages")));
